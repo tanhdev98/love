@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-heart {
+    background-image: url('../images/icons/heart.svg');
+}
+
+.icon-two-heart {
+    background-image: url('../images/icons/two-hearts.png');
+    width: 75px;
+    height: 75px;
+    transition: all .3s;
+    transform: rotateY(180deg);
+}
+
+.icon-fb {
+    background-image: url('../images/icons/facebook.svg');
+}
+
+.icon-ig {
+    background-image: url('../images/icons/instagram.svg');
+}

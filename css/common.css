@@ -1,0 +1,295 @@
+@charset "utf-8";
+
+/* header */
+header {
+    padding: 40px 0 30px;
+}
+
+header .site-logo {
+    text-align: center;
+}
+
+header .site-logo h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: -0.12em 0px 0.5em;
+}
+
+header .site-logo h1>span {
+    font-family: 'Dancing Script';
+    margin: 0 10px;
+}
+
+header .site-logo p {
+    color: #797979;
+    font-weight: 300;
+    font-size: 0.8rem;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+header .site-logo p::before,
+header .site-logo p::after {
+    content: "";
+    background: #ece9e9;
+    width: 35px;
+    height: 1px;
+    position: absolute;
+    left: -50px;
+    top: 9px;
+}
+
+header .site-logo p::after {
+    right: -50px;
+    left: unset;
+}
+
+/* main */
+main .couple-section .section-title {
+    margin-bottom: 35px;
+    text-align: center;
+    padding: 70px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/background.jpeg') no-repeat center;
+}
+
+main .couple-section .section-title::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #9e6c79;
+    opacity: .8;
+}
+
+main .couple-section .section-title .avatar {
+    width: 356px;
+    height: 356px;
+    padding: 10px;
+    margin: 0 10px;
+    background: #fff;
+    z-index: 1;
+    border-radius: 10px;
+    position: relative;
+    transition: all .3s;
+}
+
+main .couple-section .section-title .avatar img {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+main .couple-section .section-title .heart-flip {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    margin-left: -58px;
+    background: #fff;
+    width: 105px;
+    height: 105px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+main .couple-section .section-title .heart-flip.flip .icon-two-heart {
+    transform: rotateY(0);
+    transition: all .3s;
+}
+
+main .couple-section .section-title .avatar .hover-info {
+    --offset: 10px;
+    --border-size: 1px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 36px solid transparent;
+    background-color: rgba(255, 255, 255, .85);
+    text-align: left;
+    z-index: 1;
+    transition: all .5s;
+    opacity: 0;
+    border-radius: 10px;
+}
+
+/* horizontal line */
+main .couple-section .section-title .avatar .hover-info .h-lines {
+    border-bottom-color: #eda2b6;
+    border-top-color: #eda2b6;
+    transform: scaleX(0);
+    opacity: .5;
+    --vertical-offset: calc(var(--offset) * -1);
+    border-top: var(--border-size) solid #eda2b6;
+    border-bottom: var(--border-size) solid #eda2b6;
+    top: calc(var(--border-size) * -1);
+    bottom: calc(var(--border-size) * -1);
+}
+
+main .couple-section .section-title .avatar .hover-info .h-lines::before {
+    top: calc(var(--vertical-offset) - var(--border-size));
+    bottom: calc(var(--vertical-offset) - var(--border-size));
+    left: calc(var(--offset) - var(--border-size));
+    right: calc(var(--offset) - var(--border-size));
+}
+
+/* vertical line */
+main .couple-section .section-title .avatar .hover-info .v-lines {
+    border-right-color: #eda2b6;
+    border-left-color: #eda2b6;
+    transform: scaleY(0);
+    opacity: .5;
+    --horizontal-offset: calc(var(--offset) * -1);
+    border-left: var(--border-size) solid #eda2b6;
+    border-right: var(--border-size) solid #eda2b6;
+    right: calc(var(--border-size) * -1);
+    left: calc(var(--border-size) * -1);
+}
+
+main .couple-section .section-title .avatar .hover-info .v-lines::before {
+    top: calc(var(--offset) - var(--border-size));
+    bottom: calc(var(--offset) - var(--border-size));
+    left: calc(var(--horizontal-offset) - var(--border-size));
+    right: calc(var(--horizontal-offset) - var(--border-size));
+}
+
+main .couple-section .section-title .avatar:hover .hover-info {
+    opacity: 1;
+}
+
+main .couple-section .section-title .avatar:hover img {
+    filter: blur(4px) grayscale(80%) brightness(1.4);
+}
+
+main .couple-section .section-title .avatar:hover .hover-info .v-lines {
+    transform: scaleY(1);
+}
+
+main .couple-section .section-title .avatar:hover .hover-info .h-lines {
+    transform: scaleX(1);
+}
+
+.h-lines,
+.v-lines {
+    position: absolute;
+    top: var(--horizontal-offset, 0);
+    right: var(--vertical-offset, 0);
+    bottom: var(--horizontal-offset, 0);
+    left: var(--vertical-offset, 0);
+    transition: transform .8s ease;
+    will-change: transform;
+    z-index: -1;
+}
+
+.h-lines::before,
+.v-lines::before {
+    content: "";
+    position: absolute;
+    border: inherit;
+}
+
+main .couple-section .section-title .avatar .hover-info .content {
+    color: #eda2b6;
+}
+
+main .couple-section .section-title .avatar .hover-info .content h1 {
+    font-family: 'Marmelad';
+    margin: 18px 0;
+    text-align: center;
+    font-size: 2rem;
+    color: inherit;
+}
+
+main .couple-section .section-title .avatar .hover-info .content p {
+    padding: 0 5px;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+main .couple-section .section-title .avatar .hover-info .content .social-wrap {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+main .couple-section .together-times {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #eda2b6;
+    text-align: center;
+}
+
+main .couple-section .together-times span {
+    color: #eda2b6;
+}
+
+main .couple-section .together-times p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #eda2b6;
+}
+
+main .story-section {
+    height: 100vh;
+}
+
+main .story-section .section-title {
+    margin-bottom: 35px;
+    text-align: center;
+    padding: 70px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/background.jpeg') no-repeat center;
+}
+
+main .story-section .section-title::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #9e6c79;
+    opacity: .8;
+}
+
+main .story-section .section-title h1 {
+    color: #fff;
+    font-size: 3rem;
+    z-index: 1;
+    position: relative;
+    margin: 0 auto 45px;
+    font-weight: 700;
+}
+
+main .story-section .section-title h1::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 100%;
+    max-width: 189px;
+    height: 24px;
+    opacity: .5;
+    background: url('../images/icons/title.svg') no-repeat center;
+    transform: translateX(-50%);
+}
