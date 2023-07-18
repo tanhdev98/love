@@ -345,7 +345,7 @@ main .story-section .timeline::before {
     top: 0;
     left: 50%;
     margin-left: -1px;
-    background: #8eaeba;
+    background: #eda2b6;
     clear: both;
     transition: height .3s linear;
 }
