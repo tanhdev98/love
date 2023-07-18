@@ -125,6 +125,7 @@ main .couple-section .section-title .avatar .hover-info {
 }
 
 /* horizontal line */
+main .story-section .timeline .timeline-date .content-timeline-date .h-lines,
 main .couple-section .section-title .avatar .hover-info .h-lines {
     border-bottom-color: #eda2b6;
     border-top-color: #eda2b6;
@@ -137,6 +138,7 @@ main .couple-section .section-title .avatar .hover-info .h-lines {
     bottom: calc(var(--border-size) * -1);
 }
 
+main .story-section .timeline .timeline-date .content-timeline-date .h-lines::before,
 main .couple-section .section-title .avatar .hover-info .h-lines::before {
     top: calc(var(--vertical-offset) - var(--border-size));
     bottom: calc(var(--vertical-offset) - var(--border-size));
@@ -145,6 +147,7 @@ main .couple-section .section-title .avatar .hover-info .h-lines::before {
 }
 
 /* vertical line */
+main .story-section .timeline .timeline-date .content-timeline-date .v-lines,
 main .couple-section .section-title .avatar .hover-info .v-lines {
     border-right-color: #eda2b6;
     border-left-color: #eda2b6;
@@ -157,6 +160,7 @@ main .couple-section .section-title .avatar .hover-info .v-lines {
     left: calc(var(--border-size) * -1);
 }
 
+main .story-section .timeline .timeline-date .content-timeline-date .v-lines::before,
 main .couple-section .section-title .avatar .hover-info .v-lines::before {
     top: calc(var(--offset) - var(--border-size));
     bottom: calc(var(--offset) - var(--border-size));
@@ -172,10 +176,12 @@ main .couple-section .section-title .avatar:hover img {
     filter: blur(4px) grayscale(80%) brightness(1.4);
 }
 
+main .story-section .timeline .timeline-date .content-timeline-date .h-lines,
 main .couple-section .section-title .avatar:hover .hover-info .v-lines {
     transform: scaleY(1);
 }
 
+main .story-section .timeline .timeline-date .content-timeline-date .v-lines,
 main .couple-section .section-title .avatar:hover .hover-info .h-lines {
     transform: scaleX(1);
 }
@@ -197,6 +203,36 @@ main .couple-section .section-title .avatar:hover .hover-info .h-lines {
     content: "";
     position: absolute;
     border: inherit;
+}
+
+.h-lines {
+    --vertical-offset: calc(var(--offset) * -1);
+    border-top: var(--border-size) solid currentcolor;
+    border-bottom: var(--border-size) solid currentcolor;
+    top: calc(var(--border-size) * -1);
+    bottom: calc(var(--border-size) * -1);
+}
+
+.h-lines::before {
+    top: calc(var(--vertical-offset) - var(--border-size));
+    bottom: calc(var(--vertical-offset) - var(--border-size));
+    left: calc(var(--offset) - var(--border-size));
+    right: calc(var(--offset) - var(--border-size));
+}
+
+.v-lines {
+    --horizontal-offset: calc(var(--offset) * -1);
+    border-left: var(--border-size) solid currentcolor;
+    border-right: var(--border-size) solid currentcolor;
+    right: calc(var(--border-size) * -1);
+    left: calc(var(--border-size) * -1);
+}
+
+.v-lines::before {
+    top: calc(var(--offset) - var(--border-size));
+    bottom: calc(var(--offset) - var(--border-size));
+    left: calc(var(--horizontal-offset) - var(--border-size));
+    right: calc(var(--horizontal-offset) - var(--border-size));
 }
 
 main .couple-section .section-title .avatar .hover-info .content {
@@ -229,7 +265,7 @@ main .couple-section .section-title .avatar .hover-info .content .social-wrap {
 }
 
 main .couple-section .together-times {
-    font-size: 1.5rem;
+    font-size: 3rem;
     margin-bottom: 40px;
     font-weight: 700;
     color: #eda2b6;
@@ -241,7 +277,7 @@ main .couple-section .together-times span {
 }
 
 main .couple-section .together-times p {
-    font-size: 1rem;
+    font-size: 2.5rem;
     margin-top: 10px;
     color: #eda2b6;
 }
@@ -292,4 +328,170 @@ main .story-section .section-title h1::after {
     opacity: .5;
     background: url('../images/icons/title.svg') no-repeat center;
     transform: translateX(-50%);
+}
+
+main .story-section .timeline {
+    position: relative;
+    width: 50%;
+    flex: 0 0 auto;
+    margin: auto;
+}
+
+main .story-section .timeline::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1px;
+    background: #8eaeba;
+    clear: both;
+    transition: height .3s linear;
+}
+
+main .story-section .timeline .timeline-date:first-child {
+    padding-top: 0;
+}
+
+main .story-section .timeline .timeline-date {
+    clear: both;
+    padding: 7px 0;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 70px;
+}
+
+.content-timeline-date {
+    --offset: 7px;
+    --border-size: 1px;
+    font-family: 'Marmelad';
+    color: #eda2b6;
+    font-size: 27pt;
+    position: relative;
+    padding: 4px 32px;
+    width: fit-content;
+    margin: auto;
+}
+
+main .story-section .timeline .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    position: relative;
+    margin-bottom: 100px;
+}
+
+main .story-section .timeline .gallery-container::before {
+    content: '';
+    width: 424px;
+    height: 398px;
+    position: absolute;
+    top: -60px;
+    right: -150px;
+    z-index: -1;
+    background: url('../images/flower-medium.svg') no-repeat center center;
+}
+
+main .story-section .timeline .gallery-container::after {
+    content: '';
+    width: 424px;
+    height: 398px;
+    position: absolute;
+    bottom: -75px;
+    left: -165px;
+    z-index: -1;
+    background: url('../images/flower-medium.svg') no-repeat center center;
+    transform: scaleY(-1) rotate(-90deg);
+}
+
+main .story-section .timeline .gallery-container .timeline-gallery-wrapper {
+    /* grid-column: 1/span 18; */
+    grid-column: 1/12;
+    grid-row: 1;
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+main .story-section .timeline .gallery-container .timeline-gallery-wrapper .item {
+    text-align: center;
+    box-shadow: 0 0 10px #ddd;
+}
+
+main .story-section .timeline .gallery-container .timeline-gallery-wrapper .item img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+}
+
+main .story-section .timeline .description-wrapper {
+    grid-column: 14/-1;
+    grid-row: 1;
+    margin-top: 10%;
+    z-index: 1;
+    position: relative;
+}
+
+main .story-section .timeline .description-wrapper .description {
+    transition: transform .5s ease-in-out;
+    background: #eda2b6;
+    border: 10px solid #fff;
+    padding: 30px;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+main .story-section .timeline .description-wrapper .description .content-timeline-date {
+    padding: 30px 20px;
+    --offset: 9px;
+}
+
+main .story-section .timeline .description-wrapper .description .content-timeline-date .h-lines {
+    border-top-color: rgba(225, 225, 225, .3);
+    border-bottom-color: rgba(225, 225, 225, .3);
+}
+
+main .story-section .timeline .description-wrapper .description .content-timeline-date .v-lines {
+    border-left-color: rgba(225, 225, 225, .3);
+    border-right-color: rgba(225, 225, 225, .3);
+}
+
+main .story-section .timeline .description-wrapper .description .content-timeline-date h4 {
+    float: none;
+    text-align: center;
+    margin: 0 auto 15px;
+    position: relative;
+    padding-bottom: 40px;
+    color: #fff;
+    display: inline-block;
+    font-family: 'Marmelad';
+    font-size: 2rem;
+}
+
+main .story-section .timeline .description-wrapper .description .content-timeline-date p {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 2;
+}
+
+main .story-section .timeline .description-wrapper .description .content-timeline-date p a {
+    color: #fff;
+}
+
+main .story-section .timeline .description-wrapper .description .content-timeline-date h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 19px;
+    background-position: center center;
+    background-image: url('../images/icons/title.svg');
+    background-repeat: no-repeat;
+    opacity: .4;
 }
