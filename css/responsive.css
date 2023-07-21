@@ -1,0 +1,22 @@
+@media screen and (max-width: 500px) {
+
+    /* main .story-section .timeline .gallery-container {
+        display: block;
+    } */
+    main .story-section .timeline {
+        width: 90%;
+    }
+
+    main .story-section .timeline .gallery-container .timeline-gallery-wrapper {
+        grid-column: 1/-1;
+    }
+
+    main .story-section .timeline .description-wrapper {
+        grid-column: 2/24;
+    }
+
+    main .story-section .timeline .gallery-container::after,
+    main .story-section .timeline .gallery-container::before {
+        display: none;
+    }
+}

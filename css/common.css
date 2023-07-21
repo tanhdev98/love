@@ -373,8 +373,12 @@ main .story-section .timeline .timeline-date {
     font-size: 27pt;
     position: relative;
     padding: 4px 32px;
-    width: fit-content;
+    /* width: fit-content; */
     margin: auto;
+}
+
+.timeline-date .content-timeline-date {
+    width: fit-content;
 }
 
 main .story-section .timeline .gallery-container {
@@ -382,12 +386,6 @@ main .story-section .timeline .gallery-container {
     grid-template-columns: repeat(24, 1fr);
     position: relative;
     margin-bottom: 100px;
-}
-
-@media screen and (max-width: 900px) {
-    main .story-section .timeline .gallery-container {
-        display: block;
-    }
 }
 
 main .story-section .timeline .gallery-container::before {
