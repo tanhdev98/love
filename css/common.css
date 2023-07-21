@@ -384,6 +384,12 @@ main .story-section .timeline .gallery-container {
     margin-bottom: 100px;
 }
 
+@media screen and (max-width: 900px) {
+    main .story-section .timeline .gallery-container {
+        display: block;
+    }
+}
+
 main .story-section .timeline .gallery-container::before {
     content: '';
     width: 424px;
@@ -494,4 +500,22 @@ main .story-section .timeline .description-wrapper .description .content-timelin
     background-image: url('../images/icons/title.svg');
     background-repeat: no-repeat;
     opacity: .4;
+}
+
+main .story-section .timeline-footer {
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+main .story-section .timeline-footer>* {
+    margin: auto;
+}
+
+main .story-section .timeline-footer h1 {
+    color: #eda2b6;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: 800;
 }

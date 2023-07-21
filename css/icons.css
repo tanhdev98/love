@@ -30,3 +30,9 @@
 .icon-ig {
     background-image: url('../images/icons/instagram.svg');
 }
+
+.icon-book-love {
+    background-image: url('../images/icons/love-books.png');
+    width: 80px;
+    height: 80px;
+}
