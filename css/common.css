@@ -548,3 +548,19 @@ main .story-section .timeline-footer h1 {
     font-weight: 800;
     line-height: 30px;
 }
+
+.moveToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #eda2b6;
+    border-radius: 100%;
+    background: #fff;
+    z-index: 1;
+    cursor: pointer;
+}

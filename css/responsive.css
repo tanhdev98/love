@@ -54,4 +54,12 @@
     main .couple-section .section-title .avatar:hover {
         height: 356px;
     }
+
+    .moveToTop {
+        width: 30px;
+        height: 30px;
+        bottom: 10px;
+        right: 10px;
+        border-width: 2px;
+    }
 }
