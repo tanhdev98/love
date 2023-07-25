@@ -58,3 +58,24 @@ document.addEventListener('DOMContentLoaded', function () {
     let countHtml = document.querySelector('.count');
     countHtml.innerHTML = output;
 });
+
+const moveToTop = document.querySelector(".moveToTop");
+const moveToBottom = document.querySelector('.moveToBottom');
+
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 100) {
+        moveToTop.style.display = "flex";
+        moveToBottom.style.display = "none";
+    } else {
+        moveToTop.style.display = "none";
+        moveToBottom.style.display = "flex";
+    }
+});
+
+const descriptionLink = document.querySelector('.description p a');
+
+descriptionLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    const herf = this.getAttribute('href');
+    window.open(herf, '_blank');
+});
