@@ -570,3 +570,15 @@ main .story-section .timeline-footer h1 {
     left: 40px;
     right: unset;
 }
+
+main .story-section .timeline .gallery-container.letter {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.letter a {
+    text-align: center;
+    color: #eda2b6;
+    font-weight: bold;
+    background: #fff;
+    padding: 20px 0;
+}
